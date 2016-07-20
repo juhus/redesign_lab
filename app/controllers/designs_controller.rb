@@ -29,6 +29,7 @@ class DesignsController < ApplicationController
   # POST /designs.json
   def create
     @design = Design.new(design_params)
+    @design.user = current_user
 
     respond_to do |format|
       if @design.save
